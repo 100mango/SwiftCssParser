@@ -16,7 +16,19 @@
 		DBC3DFA61EE2D53000E527FC /* CssParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3DFA51EE2D53000E527FC /* CssParser.swift */; };
 		DBC3DFA81EE2D8B100E527FC /* SwiftCSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3DFA71EE2D8B100E527FC /* SwiftCSS.swift */; };
 		DBC3DFAB1EE2D94800E527FC /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3DFAA1EE2D94800E527FC /* UIColorExtension.swift */; };
+		DBC3DFB31EE2D9D000E527FC /* SwiftCssParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3DFB21EE2D9D000E527FC /* SwiftCssParserTests.swift */; };
+		DBC3DFBB1EE2DA4500E527FC /* test.css in Resources */ = {isa = PBXBuildFile; fileRef = DBC3DFBA1EE2DA4500E527FC /* test.css */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DBC3DFB51EE2D9D000E527FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DBC3DF831EDD4BF000E527FC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DBC3DF8A1EDD4BF000E527FC;
+			remoteInfo = SwiftCssParser;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		DBC3DF8B1EDD4BF000E527FC /* SwiftCssParser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftCssParser.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -30,10 +42,21 @@
 		DBC3DFA51EE2D53000E527FC /* CssParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CssParser.swift; sourceTree = "<group>"; };
 		DBC3DFA71EE2D8B100E527FC /* SwiftCSS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftCSS.swift; sourceTree = "<group>"; };
 		DBC3DFAA1EE2D94800E527FC /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		DBC3DFB01EE2D9D000E527FC /* SwiftCssParserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftCssParserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBC3DFB21EE2D9D000E527FC /* SwiftCssParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCssParserTests.swift; sourceTree = "<group>"; };
+		DBC3DFB41EE2D9D000E527FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBC3DFBA1EE2DA4500E527FC /* test.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = test.css; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		DBC3DF881EDD4BF000E527FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBC3DFAD1EE2D9D000E527FC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -48,6 +71,7 @@
 			children = (
 				DBC3DFA01EDD4C0D00E527FC /* Others */,
 				DBC3DF8D1EDD4BF000E527FC /* SwiftCssParser */,
+				DBC3DFB11EE2D9D000E527FC /* SwiftCssParserTests */,
 				DBC3DF8C1EDD4BF000E527FC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				DBC3DF8B1EDD4BF000E527FC /* SwiftCssParser.app */,
+				DBC3DFB01EE2D9D000E527FC /* SwiftCssParserTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,6 +133,16 @@
 			name = Extension;
 			sourceTree = "<group>";
 		};
+		DBC3DFB11EE2D9D000E527FC /* SwiftCssParserTests */ = {
+			isa = PBXGroup;
+			children = (
+				DBC3DFB21EE2D9D000E527FC /* SwiftCssParserTests.swift */,
+				DBC3DFB41EE2D9D000E527FC /* Info.plist */,
+				DBC3DFBA1EE2DA4500E527FC /* test.css */,
+			);
+			path = SwiftCssParserTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -128,6 +163,24 @@
 			productReference = DBC3DF8B1EDD4BF000E527FC /* SwiftCssParser.app */;
 			productType = "com.apple.product-type.application";
 		};
+		DBC3DFAF1EE2D9D000E527FC /* SwiftCssParserTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBC3DFB71EE2D9D000E527FC /* Build configuration list for PBXNativeTarget "SwiftCssParserTests" */;
+			buildPhases = (
+				DBC3DFAC1EE2D9D000E527FC /* Sources */,
+				DBC3DFAD1EE2D9D000E527FC /* Frameworks */,
+				DBC3DFAE1EE2D9D000E527FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DBC3DFB61EE2D9D000E527FC /* PBXTargetDependency */,
+			);
+			name = SwiftCssParserTests;
+			productName = SwiftCssParserTests;
+			productReference = DBC3DFB01EE2D9D000E527FC /* SwiftCssParserTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -141,6 +194,11 @@
 					DBC3DF8A1EDD4BF000E527FC = {
 						CreatedOnToolsVersion = 8.3.2;
 						ProvisioningStyle = Automatic;
+					};
+					DBC3DFAF1EE2D9D000E527FC = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = DBC3DF8A1EDD4BF000E527FC;
 					};
 				};
 			};
@@ -158,6 +216,7 @@
 			projectRoot = "";
 			targets = (
 				DBC3DF8A1EDD4BF000E527FC /* SwiftCssParser */,
+				DBC3DFAF1EE2D9D000E527FC /* SwiftCssParserTests */,
 			);
 		};
 /* End PBXProject section */
@@ -170,6 +229,14 @@
 				DBC3DF991EDD4BF000E527FC /* LaunchScreen.storyboard in Resources */,
 				DBC3DF961EDD4BF000E527FC /* Assets.xcassets in Resources */,
 				DBC3DF941EDD4BF000E527FC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBC3DFAE1EE2D9D000E527FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBC3DFBB1EE2DA4500E527FC /* test.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,7 +256,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DBC3DFAC1EE2D9D000E527FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBC3DFB31EE2D9D000E527FC /* SwiftCssParserTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DBC3DFB61EE2D9D000E527FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DBC3DF8A1EDD4BF000E527FC /* SwiftCssParser */;
+			targetProxy = DBC3DFB51EE2D9D000E527FC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DBC3DF921EDD4BF000E527FC /* Main.storyboard */ = {
@@ -332,6 +415,32 @@
 			};
 			name = Release;
 		};
+		DBC3DFB81EE2D9D000E527FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SwiftCssParserTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Mango.SwiftCssParserTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftCssParser.app/SwiftCssParser";
+			};
+			name = Debug;
+		};
+		DBC3DFB91EE2D9D000E527FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SwiftCssParserTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Mango.SwiftCssParserTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftCssParser.app/SwiftCssParser";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -349,6 +458,14 @@
 			buildConfigurations = (
 				DBC3DF9E1EDD4BF000E527FC /* Debug */,
 				DBC3DF9F1EDD4BF000E527FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DBC3DFB71EE2D9D000E527FC /* Build configuration list for PBXNativeTarget "SwiftCssParserTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBC3DFB81EE2D9D000E527FC /* Debug */,
+				DBC3DFB91EE2D9D000E527FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

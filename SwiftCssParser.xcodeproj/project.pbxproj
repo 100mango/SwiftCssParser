@@ -14,6 +14,8 @@
 		DBC3DF991EDD4BF000E527FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBC3DF971EDD4BF000E527FC /* LaunchScreen.storyboard */; };
 		DBC3DFA31EDD4C4900E527FC /* CssLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3DFA21EDD4C4900E527FC /* CssLexer.swift */; };
 		DBC3DFA61EE2D53000E527FC /* CssParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3DFA51EE2D53000E527FC /* CssParser.swift */; };
+		DBC3DFA81EE2D8B100E527FC /* SwiftCSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3DFA71EE2D8B100E527FC /* SwiftCSS.swift */; };
+		DBC3DFAB1EE2D94800E527FC /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3DFAA1EE2D94800E527FC /* UIColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		DBC3DF9A1EDD4BF000E527FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = SwiftCssParser/Info.plist; sourceTree = "<group>"; };
 		DBC3DFA21EDD4C4900E527FC /* CssLexer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CssLexer.swift; sourceTree = "<group>"; };
 		DBC3DFA51EE2D53000E527FC /* CssParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CssParser.swift; sourceTree = "<group>"; };
+		DBC3DFA71EE2D8B100E527FC /* SwiftCSS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftCSS.swift; sourceTree = "<group>"; };
+		DBC3DFAA1EE2D94800E527FC /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 			children = (
 				DBC3DFA41EE2D50800E527FC /* Parser */,
 				DBC3DFA11EDD4C3300E527FC /* Lexer */,
+				DBC3DFA91EE2D92100E527FC /* Extension */,
+				DBC3DFA71EE2D8B100E527FC /* SwiftCSS.swift */,
 			);
 			path = SwiftCssParser;
 			sourceTree = "<group>";
@@ -92,6 +98,14 @@
 				DBC3DFA51EE2D53000E527FC /* CssParser.swift */,
 			);
 			name = Parser;
+			sourceTree = "<group>";
+		};
+		DBC3DFA91EE2D92100E527FC /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				DBC3DFAA1EE2D94800E527FC /* UIColorExtension.swift */,
+			);
+			name = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,7 +183,9 @@
 				DBC3DFA61EE2D53000E527FC /* CssParser.swift in Sources */,
 				DBC3DF911EDD4BF000E527FC /* ViewController.swift in Sources */,
 				DBC3DF8F1EDD4BF000E527FC /* AppDelegate.swift in Sources */,
+				DBC3DFA81EE2D8B100E527FC /* SwiftCSS.swift in Sources */,
 				DBC3DFA31EDD4C4900E527FC /* CssLexer.swift in Sources */,
+				DBC3DFAB1EE2D94800E527FC /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,14 +12,19 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.view.backgroundColorCSS = ("#View","color")
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
+    @IBAction func changeColor(_ sender: UIButton) {
+        if SwiftCssTheme.theme == .day {
+            SwiftCssTheme.theme = .night
+        } else {
+            SwiftCssTheme.theme = .day
+        }
+    }
 
 }
 

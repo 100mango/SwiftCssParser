@@ -134,5 +134,8 @@ extension CssParser {
         }
     }
     
+    public func parse() {
+        css()
+    }
     
 }

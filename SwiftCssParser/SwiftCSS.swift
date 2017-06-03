@@ -12,28 +12,29 @@ public class SwiftCSS {
     
     private let parsedCss: [String:[String:Any]]
     
-    init(CssFileURL: URL) {
+    public init(CssFileURL: URL) {
         let content = try! String(contentsOf: CssFileURL, encoding: .utf8)
         let lexer = CssLexer(input: content)
         let parser = CssParser(lexer: lexer)
+        parser.parse()
         parsedCss = parser.outputDic
     }
     
     
-    func int(selector: String, key: String) -> Int {
+    public func int(selector: String, key: String) -> Int {
         
         return Int(double(selector: selector, key: key))
     }
     
-    func double(selector: String, key: String) -> Double {
+    public func double(selector: String, key: String) -> Double {
         return value(selector: selector, key: key) ?? 0
     }
     
-    func string(selector: String, key: String) -> String {
+    public func string(selector: String, key: String) -> String {
         return value(selector: selector, key: key) ?? ""
     }
     
-    func color(selector: String, key: String) -> UIColor {
+    public func color(selector: String, key: String) -> UIColor {
         
         if let rgb:(Double,Double,Double,Double) = value(selector: selector, key: key) {
             return UIColor(red: CGFloat(rgb.0/255), green: CGFloat(rgb.1/255), blue: CGFloat(rgb.2/255), alpha: CGFloat(rgb.3))
@@ -43,7 +44,7 @@ public class SwiftCSS {
         
     }
     
-    func font(selector: String, key: String, fontSize: CGFloat = 14) -> UIFont {
+    public func font(selector: String, key: String, fontSize: CGFloat = 14) -> UIFont {
         
         if let name: String = value(selector: selector, key: key) {
             

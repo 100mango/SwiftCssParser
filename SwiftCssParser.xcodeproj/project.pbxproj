@@ -18,6 +18,9 @@
 		DBC3DFAB1EE2D94800E527FC /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3DFAA1EE2D94800E527FC /* UIColorExtension.swift */; };
 		DBC3DFB31EE2D9D000E527FC /* SwiftCssParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3DFB21EE2D9D000E527FC /* SwiftCssParserTests.swift */; };
 		DBC3DFBB1EE2DA4500E527FC /* test.css in Resources */ = {isa = PBXBuildFile; fileRef = DBC3DFBA1EE2DA4500E527FC /* test.css */; };
+		DBC3DFBE1EE2E1FC00E527FC /* SwiftCssTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3DFBD1EE2E1FC00E527FC /* SwiftCssTheme.swift */; };
+		DBC3DFC01EE2E2D600E527FC /* day.css in Resources */ = {isa = PBXBuildFile; fileRef = DBC3DFBF1EE2E2D600E527FC /* day.css */; };
+		DBC3DFC31EE2E2F200E527FC /* night.css in Resources */ = {isa = PBXBuildFile; fileRef = DBC3DFC21EE2E2F200E527FC /* night.css */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,9 @@
 		DBC3DFB21EE2D9D000E527FC /* SwiftCssParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCssParserTests.swift; sourceTree = "<group>"; };
 		DBC3DFB41EE2D9D000E527FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBC3DFBA1EE2DA4500E527FC /* test.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = test.css; sourceTree = "<group>"; };
+		DBC3DFBD1EE2E1FC00E527FC /* SwiftCssTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftCssTheme.swift; sourceTree = "<group>"; };
+		DBC3DFBF1EE2E2D600E527FC /* day.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = day.css; sourceTree = "<group>"; };
+		DBC3DFC21EE2E2F200E527FC /* night.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = night.css; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +75,7 @@
 		DBC3DF821EDD4BF000E527FC = {
 			isa = PBXGroup;
 			children = (
+				DBC3DFC11EE2E2E200E527FC /* CssFile */,
 				DBC3DFA01EDD4C0D00E527FC /* Others */,
 				DBC3DF8D1EDD4BF000E527FC /* SwiftCssParser */,
 				DBC3DFB11EE2D9D000E527FC /* SwiftCssParserTests */,
@@ -91,6 +98,7 @@
 				DBC3DFA41EE2D50800E527FC /* Parser */,
 				DBC3DFA11EDD4C3300E527FC /* Lexer */,
 				DBC3DFA91EE2D92100E527FC /* Extension */,
+				DBC3DFBC1EE2E1DB00E527FC /* CssTheme */,
 				DBC3DFA71EE2D8B100E527FC /* SwiftCSS.swift */,
 			);
 			path = SwiftCssParser;
@@ -141,6 +149,23 @@
 				DBC3DFBA1EE2DA4500E527FC /* test.css */,
 			);
 			path = SwiftCssParserTests;
+			sourceTree = "<group>";
+		};
+		DBC3DFBC1EE2E1DB00E527FC /* CssTheme */ = {
+			isa = PBXGroup;
+			children = (
+				DBC3DFBD1EE2E1FC00E527FC /* SwiftCssTheme.swift */,
+			);
+			name = CssTheme;
+			sourceTree = "<group>";
+		};
+		DBC3DFC11EE2E2E200E527FC /* CssFile */ = {
+			isa = PBXGroup;
+			children = (
+				DBC3DFBF1EE2E2D600E527FC /* day.css */,
+				DBC3DFC21EE2E2F200E527FC /* night.css */,
+			);
+			name = CssFile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,8 +251,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBC3DFC01EE2E2D600E527FC /* day.css in Resources */,
 				DBC3DF991EDD4BF000E527FC /* LaunchScreen.storyboard in Resources */,
 				DBC3DF961EDD4BF000E527FC /* Assets.xcassets in Resources */,
+				DBC3DFC31EE2E2F200E527FC /* night.css in Resources */,
 				DBC3DF941EDD4BF000E527FC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,6 +280,7 @@
 				DBC3DFA81EE2D8B100E527FC /* SwiftCSS.swift in Sources */,
 				DBC3DFA31EDD4C4900E527FC /* CssLexer.swift in Sources */,
 				DBC3DFAB1EE2D94800E527FC /* UIColorExtension.swift in Sources */,
+				DBC3DFBE1EE2E1FC00E527FC /* SwiftCssTheme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

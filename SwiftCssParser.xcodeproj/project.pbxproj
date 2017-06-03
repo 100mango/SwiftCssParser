@@ -13,6 +13,7 @@
 		DBC3DF961EDD4BF000E527FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBC3DF951EDD4BF000E527FC /* Assets.xcassets */; };
 		DBC3DF991EDD4BF000E527FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBC3DF971EDD4BF000E527FC /* LaunchScreen.storyboard */; };
 		DBC3DFA31EDD4C4900E527FC /* CssLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3DFA21EDD4C4900E527FC /* CssLexer.swift */; };
+		DBC3DFA61EE2D53000E527FC /* CssParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3DFA51EE2D53000E527FC /* CssParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		DBC3DF981EDD4BF000E527FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DBC3DF9A1EDD4BF000E527FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = SwiftCssParser/Info.plist; sourceTree = "<group>"; };
 		DBC3DFA21EDD4C4900E527FC /* CssLexer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CssLexer.swift; sourceTree = "<group>"; };
+		DBC3DFA51EE2D53000E527FC /* CssParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CssParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 		DBC3DF8D1EDD4BF000E527FC /* SwiftCssParser */ = {
 			isa = PBXGroup;
 			children = (
+				DBC3DFA41EE2D50800E527FC /* Parser */,
 				DBC3DFA11EDD4C3300E527FC /* Lexer */,
 			);
 			path = SwiftCssParser;
@@ -81,6 +84,14 @@
 				DBC3DFA21EDD4C4900E527FC /* CssLexer.swift */,
 			);
 			name = Lexer;
+			sourceTree = "<group>";
+		};
+		DBC3DFA41EE2D50800E527FC /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				DBC3DFA51EE2D53000E527FC /* CssParser.swift */,
+			);
+			name = Parser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBC3DFA61EE2D53000E527FC /* CssParser.swift in Sources */,
 				DBC3DF911EDD4BF000E527FC /* ViewController.swift in Sources */,
 				DBC3DF8F1EDD4BF000E527FC /* AppDelegate.swift in Sources */,
 				DBC3DFA31EDD4C4900E527FC /* CssLexer.swift in Sources */,

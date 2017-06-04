@@ -10,11 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var sizeLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColorCSS = ("#View","color")
         
+        self.sizeLabel.text = "\(SwiftDeviceCss.size(selector: "#View", key: "size"))"
     }
 
 

@@ -9,7 +9,7 @@
 import UIKit
 
 
-public let swiftDeviceCss = SwiftCssStyleSheet.deviceCss()
+public let SwiftDeviceCss = SwiftCssStyleSheet.deviceCss()
 
 
 class SwiftCssStyleSheet {

@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		DB01C1421EE3D78F007D7308 /* SwiftDeviceCss.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB01C1411EE3D78F007D7308 /* SwiftDeviceCss.swift */; };
+		DB01C1491EE3DF73007D7308 /* iPhone6P.css in Resources */ = {isa = PBXBuildFile; fileRef = DB01C1431EE3DF73007D7308 /* iPhone6P.css */; };
+		DB01C14A1EE3DF73007D7308 /* iPad.css in Resources */ = {isa = PBXBuildFile; fileRef = DB01C1441EE3DF73007D7308 /* iPad.css */; };
+		DB01C14B1EE3DF73007D7308 /* iPhone4.css in Resources */ = {isa = PBXBuildFile; fileRef = DB01C1451EE3DF73007D7308 /* iPhone4.css */; };
+		DB01C14C1EE3DF73007D7308 /* iPhone5.css in Resources */ = {isa = PBXBuildFile; fileRef = DB01C1461EE3DF73007D7308 /* iPhone5.css */; };
+		DB01C14D1EE3DF73007D7308 /* iPadPro.css in Resources */ = {isa = PBXBuildFile; fileRef = DB01C1471EE3DF73007D7308 /* iPadPro.css */; };
+		DB01C14E1EE3DF73007D7308 /* iPhone6.css in Resources */ = {isa = PBXBuildFile; fileRef = DB01C1481EE3DF73007D7308 /* iPhone6.css */; };
 		DBC3DF8F1EDD4BF000E527FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3DF8E1EDD4BF000E527FC /* AppDelegate.swift */; };
 		DBC3DF911EDD4BF000E527FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3DF901EDD4BF000E527FC /* ViewController.swift */; };
 		DBC3DF941EDD4BF000E527FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBC3DF921EDD4BF000E527FC /* Main.storyboard */; };
@@ -36,6 +42,12 @@
 
 /* Begin PBXFileReference section */
 		DB01C1411EE3D78F007D7308 /* SwiftDeviceCss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftDeviceCss.swift; sourceTree = "<group>"; };
+		DB01C1431EE3DF73007D7308 /* iPhone6P.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = iPhone6P.css; sourceTree = "<group>"; };
+		DB01C1441EE3DF73007D7308 /* iPad.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = iPad.css; sourceTree = "<group>"; };
+		DB01C1451EE3DF73007D7308 /* iPhone4.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = iPhone4.css; sourceTree = "<group>"; };
+		DB01C1461EE3DF73007D7308 /* iPhone5.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = iPhone5.css; sourceTree = "<group>"; };
+		DB01C1471EE3DF73007D7308 /* iPadPro.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = iPadPro.css; sourceTree = "<group>"; };
+		DB01C1481EE3DF73007D7308 /* iPhone6.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = iPhone6.css; sourceTree = "<group>"; };
 		DBC3DF8B1EDD4BF000E527FC /* SwiftCssParser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftCssParser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBC3DF8E1EDD4BF000E527FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = SwiftCssParser/AppDelegate.swift; sourceTree = "<group>"; };
 		DBC3DF901EDD4BF000E527FC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = SwiftCssParser/ViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +187,12 @@
 			children = (
 				DBC3DFBF1EE2E2D600E527FC /* day.css */,
 				DBC3DFC21EE2E2F200E527FC /* night.css */,
+				DB01C1451EE3DF73007D7308 /* iPhone4.css */,
+				DB01C1461EE3DF73007D7308 /* iPhone5.css */,
+				DB01C1481EE3DF73007D7308 /* iPhone6.css */,
+				DB01C1431EE3DF73007D7308 /* iPhone6P.css */,
+				DB01C1441EE3DF73007D7308 /* iPad.css */,
+				DB01C1471EE3DF73007D7308 /* iPadPro.css */,
 			);
 			name = CssFile;
 			sourceTree = "<group>";
@@ -263,8 +281,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBC3DFC01EE2E2D600E527FC /* day.css in Resources */,
+				DB01C14D1EE3DF73007D7308 /* iPadPro.css in Resources */,
+				DB01C14B1EE3DF73007D7308 /* iPhone4.css in Resources */,
 				DBC3DF991EDD4BF000E527FC /* LaunchScreen.storyboard in Resources */,
+				DB01C14A1EE3DF73007D7308 /* iPad.css in Resources */,
+				DB01C1491EE3DF73007D7308 /* iPhone6P.css in Resources */,
+				DB01C14E1EE3DF73007D7308 /* iPhone6.css in Resources */,
 				DBC3DF961EDD4BF000E527FC /* Assets.xcassets in Resources */,
+				DB01C14C1EE3DF73007D7308 /* iPhone5.css in Resources */,
 				DBC3DFC31EE2E2F200E527FC /* night.css in Resources */,
 				DBC3DF941EDD4BF000E527FC /* Main.storyboard in Resources */,
 			);

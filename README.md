@@ -3,7 +3,7 @@
 
 # SwiftCssParser
 
-  ![](http://img.shields.io/badge/Swift-3.0-blue.svg)
+  ![](http://img.shields.io/badge/Swift-3.0-orange.svg)
 
 
 
@@ -58,7 +58,7 @@ let width = css.int(selector: "#View", key: "width")
 
 It's very easy to build your own Powerful, Flexiable CSS based solutions base on `SwiftCssParser`.
 
-#### example1: `SwiftDeviceCss`
+#### Example1: `SwiftDeviceCss`
 
 ​	In most cases, `Auto Layout` can help us calculates the size and location of our views. But in some cases, we need to set specifc size and location for our views based on device type (device's screen size) to accomplish the `Pixel Perfect` design.
 
@@ -182,8 +182,20 @@ self.view.backgroundColorCSS = ("#View","color")
 Changing theme is even easier:
 
 ~~~swift
-SwiftCssTheme.theme = .night
+@IBAction func changeColor(_ sender: UIButton) {
+    if SwiftCssTheme.theme == .day {
+        SwiftCssTheme.theme = .night
+    } else {
+        SwiftCssTheme.theme = .day
+    }
+}
 ~~~
+
+
+
+![](theme.gif)
+
+
 
 
 

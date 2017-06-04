@@ -10,7 +10,7 @@ import UIKit
 
 public class SwiftCssTheme {
     
-    public static let updateThemeNotification = Notification.Name("CSSThemeUpdate")
+    public static let updateThemeNotification = Notification.Name("SwiftCSSThemeUpdate")
     
     public enum Theme {
         case day

@@ -50,4 +50,9 @@ class SwiftCssParserTests: XCTestCase {
         XCTAssertTrue(font2 == font2test, "get font")
         
     }
+    
+    func testParseSize() {
+        let size = testSwiftCSS.size(selector: "#View", key: "size")
+        XCTAssertTrue(size == CGSize(width: 10, height: 10) )
+    }
 }

@@ -34,6 +34,18 @@ public class SwiftCSS {
         return value(selector: selector, key: key) ?? ""
     }
     
+    public func size(selector: String, key: String) -> CGSize {
+        
+        guard let dic: [String:Double] = value(selector: selector, key: key),
+            let double1 = dic["double1"], let double2 = dic["double2"] else {
+            return CGSize(width: 0, height: 0)
+        }
+        
+        return CGSize(width: double1, height: double2)
+        
+    }
+    
+    
     public func color(selector: String, key: String) -> UIColor {
         
         if let rgb:(Double,Double,Double,Double) = value(selector: selector, key: key) {

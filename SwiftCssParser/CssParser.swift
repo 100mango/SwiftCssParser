@@ -75,8 +75,22 @@ extension CssParser {
         
         switch currentToken {
         case let .double(value):
-            match(token: currentToken)
-            selectorDic[key.description] = value
+            
+            guard let token2 = lookaheadToken(2) else {
+                fatalError("token2 is nil")
+            }
+            switch token2 {
+            case let .double(double):
+                // key : double double;
+                match(token: currentToken)
+                match(token: token2)
+                selectorDic[key.description] = ["double1":value,"double2":double]
+            default:
+                // normal double
+                match(token: currentToken)
+                selectorDic[key.description] = value
+            }
+        
         case let .string(value):
             //LL(2)
             guard let token2 = lookaheadToken(2) else {
@@ -85,6 +99,7 @@ extension CssParser {
             
             switch token2 {
             case let .double(double):
+                //key : name double
                 match(token: currentToken)
                 match(token: token2)
                 selectorDic[key.description] = ["name":value,"size":double]

@@ -1,7 +1,5 @@
-<p align="center"> <img src="logo.png" />
+<p align="center"> <img src="icon.jpeg" />
 <br>
-
-# SwiftCssParser
 
   ![](http://img.shields.io/badge/Swift-3.0-orange.svg)
 
@@ -110,7 +108,7 @@ view.frame.size = SwiftDeviceCss.size(selector: "#View", key: "size")
 
 We can also create a powerful theme manager base on `SwiftCssParser`.
 
-For example, we want to create a night, day theme.
+For example, we want to create a night & day theme.
 
 ~~~swift
 public class SwiftCssTheme {

@@ -1,7 +1,7 @@
 <p align="center"> <img src="icon.jpeg" />
 <br>
 
-  ![](http://img.shields.io/badge/Swift-3.0-orange.svg)
+  ![](http://img.shields.io/badge/Swift-4.0-orange.svg)
 
 
 

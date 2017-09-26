@@ -16,7 +16,8 @@ import UIKit
 public enum UIColorInputError : Error {
     case missingHashMarkAsPrefix,
     unableToScanHexValue,
-    mismatchedHexStringLength
+    mismatchedHexStringLength,
+    unableToOutputHexStringForWideDisplayColor
 }
 
 extension UIColor {
@@ -87,7 +88,7 @@ extension UIColor {
             throw UIColorInputError.missingHashMarkAsPrefix
         }
         
-        let hexString: String = rgba.substring(from: rgba.characters.index(rgba.startIndex, offsetBy: 1))
+        let hexString: String = String(rgba[String.Index.init(encodedOffset: 1)...])
         var hexValue:  UInt32 = 0
         
         guard Scanner(string: hexString).scanHexInt32(&hexValue) else {
@@ -122,22 +123,38 @@ extension UIColor {
     }
     
     /**
-     Hex string of a UIColor instance.
+     Hex string of a UIColor instance, throws error.
      
      - parameter includeAlpha: Whether the alpha should be included.
      */
-    public func hexString(_ includeAlpha: Bool = true) -> String {
+    public func hexStringThrows(_ includeAlpha: Bool = true) throws -> String  {
         var r: CGFloat = 0
         var g: CGFloat = 0
         var b: CGFloat = 0
         var a: CGFloat = 0
         self.getRed(&r, green: &g, blue: &b, alpha: &a)
         
+        guard r >= 0 && r <= 1 && g >= 0 && g <= 1 && b >= 0 && b <= 1 else {
+            throw UIColorInputError.unableToOutputHexStringForWideDisplayColor
+        }
+        
         if (includeAlpha) {
             return String(format: "#%02X%02X%02X%02X", Int(r * 255), Int(g * 255), Int(b * 255), Int(a * 255))
         } else {
             return String(format: "#%02X%02X%02X", Int(r * 255), Int(g * 255), Int(b * 255))
         }
+    }
+    
+    /**
+     Hex string of a UIColor instance, fails to empty string.
+     
+     - parameter includeAlpha: Whether the alpha should be included.
+     */
+    public func hexString(_ includeAlpha: Bool = true) -> String  {
+        guard let hexString = try? hexStringThrows(includeAlpha) else {
+            return ""
+        }
+        return hexString
     }
 }
 
@@ -150,16 +167,16 @@ extension String {
             return nil
         }
         
-        let hexString: String = self.substring(from: self.characters.index(self.startIndex, offsetBy: 1))
+        let hexString: String = String(self[self.characters.index(self.startIndex, offsetBy: 1)...])
         switch (hexString.characters.count) {
         case 4:
             return "#"
-                + hexString.substring(from: self.characters.index(self.startIndex, offsetBy: 1))
-                + hexString.substring(to: self.characters.index(self.startIndex, offsetBy: 1))
+                + String(hexString[self.characters.index(self.startIndex, offsetBy: 1)...])
+                + String(hexString[..<self.characters.index(self.startIndex, offsetBy: 1)])
         case 8:
             return "#"
-                + hexString.substring(from: self.characters.index(self.startIndex, offsetBy: 2))
-                + hexString.substring(to: self.characters.index(self.startIndex, offsetBy: 2))
+                + String(hexString[self.characters.index(self.startIndex, offsetBy: 2)...])
+                + String(hexString[..<self.characters.index(self.startIndex, offsetBy: 2)])
         default:
             return nil
         }

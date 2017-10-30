@@ -28,14 +28,13 @@ A Powerful, Extensible CSS Parser written in pure Swift.
   s.source           = { :git => 'https://github.com/100mango/SwiftCssParser.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/100_mango'
 
-  s.source_files = [
-    'SwiftCssParser/CssLexer.swift',
-    'SwiftCssParser/CssParser.swift',
-    'SwiftCssParser/SwiftCSS.swift',
-    'SwiftCssParser/SwiftCssTheme.swift',
-    'SwiftCssParser/SwiftDeviceCss.swift',
-    'SwiftCssParser/UIColorExtension.swift',
+  s.source_files = 'SwiftCssParser/*.swift'
+  s.exclude_files = [
+    'SwiftCssParser/AppDelegate.swift',
+    'SwiftCssParser/ViewController.swift'
   ]
+
+  s.platform = :ios
 
   #s.frameworks = 'UIKit'
   s.ios.framework = 'UIKit'

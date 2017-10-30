@@ -202,6 +202,13 @@ Changing theme is even easier:
 All the code and demo can be found in the project. Feel free to download and experiment.  Advice and pull requests are welcome.
 
 
+## Installation
+
+CocoaPods:
+
+~~~
+pod 'SwiftCssParser'
+~~~
 
 
 ## License

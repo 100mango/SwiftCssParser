@@ -23,7 +23,7 @@ A Powerful, Extensible CSS Parser written in pure Swift.
 
   s.homepage         = 'https://github.com/100mango/SwiftCssParser'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT' }
+  s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { '100mango' => '' }
   s.source           = { :git => 'https://github.com/100mango/SwiftCssParser.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/100_mango'

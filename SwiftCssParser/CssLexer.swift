@@ -16,7 +16,7 @@ public class Lexer {
     public init(input: String) {
         self.input = input
         currentIndex = input.startIndex
-        currentCharcter = input.characters.first
+        currentCharcter = input.first
     }
     
     public func consume() {

@@ -138,7 +138,10 @@ extension CssParser {
         outputDic[selector.description] = dic
         
         match(token: .leftBrace)
-        elements(selector: selector.description)
+        // An empty rule is valid and must not be parsed as a declaration.
+        if lookaheadToken(1)?.type != Token.rightBrace.type {
+            elements(selector: selector.description)
+        }
         match(token: .rightBrace)
     }
     

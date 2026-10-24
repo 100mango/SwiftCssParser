@@ -52,4 +52,27 @@ final class CssParserCoreTests: XCTestCase {
     func testRemovingCharacters() {
         XCTAssertEqual("RGB(10,20,30)".removeCharacters(from: "RGB()"), "10,20,30")
     }
+
+    func testEmptySelectorAndFollowingRule() {
+        let values = parse("#Empty { } #View { \"width\": 1; }")
+        XCTAssertNotNil(values["#Empty"])
+        XCTAssertTrue(values["#Empty"]?.isEmpty == true)
+        XCTAssertEqual(values["#View"]?["width"] as? Double, 1)
+    }
+
+    func testFinalSemicolonIsOptional() {
+        let values = parse("#View { \"width\": 1 }")
+        XCTAssertEqual(values["#View"]?["width"] as? Double, 1)
+    }
+
+    func testDuplicatePropertyUsesLastValue() {
+        let values = parse("#View { \"width\": 1; \"width\": 2; }")
+        XCTAssertEqual(values["#View"]?["width"] as? Double, 2)
+    }
+
+    func testEmptyAndUnicodeStrings() {
+        let values = parse("#View { \"empty\": \"\"; \"title\": \"你好 😀\"; }")
+        XCTAssertEqual(values["#View"]?["empty"] as? String, "")
+        XCTAssertEqual(values["#View"]?["title"] as? String, "你好 😀")
+    }
 }

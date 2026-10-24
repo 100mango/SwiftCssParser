@@ -4,6 +4,8 @@ on:
   push:
     branches: [master]
   pull_request:
+  release:
+    types: [published]
 
 permissions:
   contents: read
@@ -39,9 +41,17 @@ jobs:
           if not candidates:
               sys.exit("No available iPhone simulator")
           print(candidates[0])')
+          echo "IOS_SIMULATOR_ID=$device_id" >> "$GITHUB_ENV"
           cd "$package_dir"
-          xcodebuild test \
-            -scheme SwiftCssParser \
-            -destination "platform=iOS Simulator,id=$device_id" \
-            -derivedDataPath "$RUNNER_TEMP/SwiftCssParserDerivedData" \
-            CODE_SIGNING_ALLOWED=NO
+          for configuration in Debug Release; do
+            xcodebuild test \
+              -scheme SwiftCssParser -configuration "$configuration" \
+              -destination "platform=iOS Simulator,id=$device_id" \
+              -derivedDataPath "$RUNNER_TEMP/SwiftCssParserDerivedData" \
+              -parallel-testing-enabled NO CODE_SIGNING_ALLOWED=NO
+          done
+      - name: Test independent consumer
+        env:
+          PACKAGE_VERSION: ${{ github.event.release.tag_name }}
+          EXPECTED_REVISION: ${{ github.sha }}
+        run: bash scripts/test-consumer.sh

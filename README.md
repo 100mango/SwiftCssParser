@@ -212,13 +212,11 @@ version may impose a newer minimum. It does not support macOS or Linux builds.
 
 In Xcode, choose **File > Add Package Dependencies**, enter
 `https://github.com/100mango/SwiftCssParser.git`, and add the `SwiftCssParser`
-product to your iOS target. This migration is not yet merged or released. Once the
-`swiftpm-support` branch is published, select that branch (the existing `0.1.0`
-tag predates SwiftPM support).
+product to your iOS target. Select version `0.2.0` or later. Version `0.1.0` predates SwiftPM support.
 For a `Package.swift` dependency:
 
 ```swift
-.package(url: "https://github.com/100mango/SwiftCssParser.git", branch: "swiftpm-support")
+.package(url: "https://github.com/100mango/SwiftCssParser.git", from: "0.2.0")
 ```
 
 Add `.product(name: "SwiftCssParser", package: "SwiftCssParser")` to your target's
@@ -239,13 +237,26 @@ pod 'SwiftCssParser'
 ~~~
 
 
+## Input and fallback behavior
+
+Empty CSS files and empty selector blocks are supported. Missing selectors,
+missing keys, and values of the wrong type use the existing getter defaults
+(`0`, an empty string, zero size, clear color, or a system font). Invalid hex
+colors can be inspected with the throwing `UIColor(rgba_throws:)` initializer.
+The parser is a small CSS-inspired configuration format, not a full CSS engine:
+malformed syntax and unreadable file URLs still terminate through the existing
+`fatalError`/`try!` behavior. Validate external inputs before using this API.
+
 ## Testing
 
 Open `Package.swift` in Xcode, select the `SwiftCssParser` package scheme and an
 iOS Simulator, then run **Product > Test**. The test CSS fixture is included in
 the SwiftPM test bundle with `Bundle.module`; existing Xcode-project tests keep
-using their original test bundle. The `SwiftPM` workflow tests the package in
-an isolated directory so it cannot accidentally test the demo Xcode project.
+using their original test bundle. The `SwiftPM` workflow runs Debug and Release tests in an isolated directory
+so it cannot accidentally test the demo Xcode project. It also tests an
+independent consuming package with its own CSS resource bundle. On a GitHub
+release, that consumer resolves the exact published tag and checks its commit
+revision before running on an iOS Simulator.
 
 `swift package dump-package` and `swift package describe` can inspect the
 manifest on any Swift host. A host-only `swift test` on macOS or Linux cannot

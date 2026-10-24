@@ -204,12 +204,52 @@ All the code and demo can be found in the project. Feel free to download and exp
 
 ## Installation
 
-CocoaPods:
+### Swift Package Manager
+
+Requires Swift 5.3 or later. `SwiftCssParser` is an iOS/UIKit library; the
+package keeps the existing iOS 9.0 deployment minimum. The selected Xcode
+version may impose a newer minimum. It does not support macOS or Linux builds.
+
+In Xcode, choose **File > Add Package Dependencies**, enter
+`https://github.com/100mango/SwiftCssParser.git`, and add the `SwiftCssParser`
+product to your iOS target. This migration is not yet merged or released. Once the
+`swiftpm-support` branch is published, select that branch (the existing `0.1.0`
+tag predates SwiftPM support).
+For a `Package.swift` dependency:
+
+```swift
+.package(url: "https://github.com/100mango/SwiftCssParser.git", branch: "swiftpm-support")
+```
+
+Add `.product(name: "SwiftCssParser", package: "SwiftCssParser")` to your target's
+`dependencies`, then use `import SwiftCssParser`.
+
+The package includes the parser and the existing UIKit, theme, and device CSS
+APIs. The demo application, storyboards, and assets are excluded. Your CSS files
+still belong in your application's resource bundle: `SwiftCSS(CssFileURL:)`
+accepts a URL supplied by your app. To use the sample `SwiftCssTheme` or
+`SwiftDeviceCss` helpers, add their corresponding files from `Others/` to your
+app target's resources; those helpers intentionally continue to read
+`Bundle.main`, just as they do with CocoaPods.
+
+### CocoaPods
 
 ~~~
 pod 'SwiftCssParser'
 ~~~
 
+
+## Testing
+
+Open `Package.swift` in Xcode, select the `SwiftCssParser` package scheme and an
+iOS Simulator, then run **Product > Test**. The test CSS fixture is included in
+the SwiftPM test bundle with `Bundle.module`; existing Xcode-project tests keep
+using their original test bundle. The `SwiftPM` workflow tests the package in
+an isolated directory so it cannot accidentally test the demo Xcode project.
+
+`swift package dump-package` and `swift package describe` can inspect the
+manifest on any Swift host. A host-only `swift test` on macOS or Linux cannot
+build UIKit; use the iOS Simulator for the complete package test suite.
 
 ## License
 

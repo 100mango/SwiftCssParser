@@ -7,12 +7,17 @@
 //
 
 import XCTest
+import UIKit
 @testable import SwiftCssParser
 
 class SwiftCssParserTests: XCTestCase {
     
     lazy var testSwiftCSS: SwiftCSS = {
+        #if SWIFT_PACKAGE
+        let testBundle = Bundle.module
+        #else
         let testBundle = Bundle(for: SwiftCssParserTests.self)
+        #endif
         let cssPath = testBundle.url(forResource: "test", withExtension: "css")
         return SwiftCSS(CssFileURL: cssPath!)
     }()

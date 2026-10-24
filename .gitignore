@@ -76,3 +76,5 @@ Carthage/Build
 Pods/
 
 # End of https://www.gitignore.io/api/swift
+# SwiftPM IDE state
+.swiftpm/

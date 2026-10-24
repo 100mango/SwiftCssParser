@@ -1,0 +1,57 @@
+name: SwiftPM
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+jobs:
+  ios-tests:
+    runs-on: macos-15
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Inspect package
+        run: |
+          swift --version
+          swift package dump-package
+          swift package describe
+      - name: Test package on iOS Simulator
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Avoid selecting the demo .xcodeproj instead of Package.swift.
+          package_dir="$RUNNER_TEMP/SwiftCssParserPackage"
+          mkdir -p "$package_dir"
+          cp Package.swift "$package_dir/"
+          cp -R SwiftCssParser SwiftCssParserTests "$package_dir/"
+          device_id=$(xcrun simctl list devices available --json | python3 -c '
+          import json, sys
+          devices = json.load(sys.stdin)["devices"]
+          candidates = [device["udid"] for runtime, entries in devices.items()
+                        if ".iOS-" in runtime for device in entries
+                        if device["name"].startswith("iPhone")]
+          if not candidates:
+              sys.exit("No available iPhone simulator")
+          print(candidates[0])')
+          echo "IOS_SIMULATOR_ID=$device_id" >> "$GITHUB_ENV"
+          cd "$package_dir"
+          for configuration in Debug Release; do
+            xcodebuild test \
+              -scheme SwiftCssParser -configuration "$configuration" \
+              -destination "platform=iOS Simulator,id=$device_id" \
+              -derivedDataPath "$RUNNER_TEMP/SwiftCssParserDerivedData" \
+              -parallel-testing-enabled NO CODE_SIGNING_ALLOWED=NO
+          done
+      - name: Test independent consumer
+        env:
+          PACKAGE_VERSION: ${{ github.event.release.tag_name }}
+          EXPECTED_REVISION: ${{ github.sha }}
+        run: bash scripts/test-consumer.sh

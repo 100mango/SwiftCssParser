@@ -8,7 +8,7 @@
 
 import XCTest
 import UIKit
-@testable import SwiftCssParser
+import SwiftCssParser
 
 class SwiftCssParserTests: XCTestCase {
     

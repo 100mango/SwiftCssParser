@@ -1,5 +1,5 @@
 import XCTest
-@testable import SwiftCssParser
+import SwiftCssParser
 
 final class CssParserCoreTests: XCTestCase {
     private func parse(_ input: String) -> [String: [String: Any]] {
